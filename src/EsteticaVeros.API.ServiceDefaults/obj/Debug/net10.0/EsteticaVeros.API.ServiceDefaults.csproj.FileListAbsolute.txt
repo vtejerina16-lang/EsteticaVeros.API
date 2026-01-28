@@ -1,0 +1,12 @@
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/bin/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.deps.json
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/bin/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.dll
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/bin/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.pdb
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.csproj.AssemblyReference.cache
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.AssemblyInfoInputs.cache
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.AssemblyInfo.cs
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.csproj.CoreCompileInputs.cache
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.dll
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/refint/EsteticaVeros.API.ServiceDefaults.dll
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/EsteticaVeros.API.ServiceDefaults.pdb
+/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/Debug/net10.0/ref/EsteticaVeros.API.ServiceDefaults.dll

@@ -1,0 +1,7 @@
+{
+  "EsteticaVeros.API.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/mnt\/d\/Projects\/EsteticaVeros.API\/src\/EsteticaVeros.API.Core",
+  "EsteticaVeros.API.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/mnt\/d\/Projects\/EsteticaVeros.API\/src\/EsteticaVeros.API.Infrastructure",
+  "EsteticaVeros.API.ServiceDefaults, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/mnt\/d\/Projects\/EsteticaVeros.API\/src\/EsteticaVeros.API.ServiceDefaults",
+  "EsteticaVeros.API.UseCases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/mnt\/d\/Projects\/EsteticaVeros.API\/src\/EsteticaVeros.API.UseCases",
+  "EsteticaVeros.API.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/mnt\/d\/Projects\/EsteticaVeros.API\/src\/EsteticaVeros.API.Web"
+}

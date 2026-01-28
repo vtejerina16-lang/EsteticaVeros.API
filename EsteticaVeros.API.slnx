@@ -1,0 +1,33 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".template.config/template.json" />
+    <File Path="CleanArchitecture.nuspec" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/EsteticaVeros.API.Core/EsteticaVeros.API.Core.csproj" />
+    <Project Path="src/EsteticaVeros.API.Infrastructure/EsteticaVeros.API.Infrastructure.csproj" />
+    <Project Path="src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj" />
+    <Project Path="src/EsteticaVeros.API.Web/EsteticaVeros.API.Web.csproj" />
+  </Folder>
+  <Folder Name="/src/_aspire/">
+    <Project Path="src/EsteticaVeros.API.AspireHost/EsteticaVeros.API.AspireHost.csproj" />
+    <Project Path="src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EsteticaVeros.API.FunctionalTests/EsteticaVeros.API.FunctionalTests.csproj">
+      <BuildDependency Project="src/EsteticaVeros.API.Web/EsteticaVeros.API.Web.csproj" />
+    </Project>
+    <Project Path="tests/EsteticaVeros.API.IntegrationTests/EsteticaVeros.API.IntegrationTests.csproj">
+      <BuildDependency Project="src/EsteticaVeros.API.Infrastructure/EsteticaVeros.API.Infrastructure.csproj" />
+    </Project>
+    <Project Path="tests/EsteticaVeros.API.UnitTests/EsteticaVeros.API.UnitTests.csproj" />
+  </Folder>
+</Solution>
