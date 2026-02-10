@@ -5,3 +5,4 @@ global using Ardalis.SmartEnum;
 global using Ardalis.Specification;
 global using Mediator;
 global using Microsoft.Extensions.Logging;
+global using EsteticaVeros.API.Core.Interfaces;

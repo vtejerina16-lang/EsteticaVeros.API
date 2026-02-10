@@ -1,6 +1,7 @@
 ﻿using EsteticaVeros.API.Core.ContributorAggregate;
 using EsteticaVeros.API.UseCases.Contributors;
 using EsteticaVeros.API.UseCases.Contributors.List;
+using EsteticaVeros.API.Web.Configurations;
 using FluentValidation;
 
 namespace EsteticaVeros.API.Web.Contributors;
@@ -12,7 +13,7 @@ public class List(IMediator mediator) : Endpoint<ListContributorsRequest, Contri
   public override void Configure()
   {
     Get("/Contributors");
-    AllowAnonymous();
+    Policies(AuthorizationConfig.RequireAuthenticatedUser);
 
     Summary(s =>
     {

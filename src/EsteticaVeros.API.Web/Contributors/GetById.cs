@@ -1,6 +1,7 @@
 ﻿using EsteticaVeros.API.Core.ContributorAggregate;
 using EsteticaVeros.API.UseCases.Contributors;
 using EsteticaVeros.API.UseCases.Contributors.Get;
+using EsteticaVeros.API.Web.Configurations;
 using EsteticaVeros.API.Web.Extensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -16,7 +17,7 @@ public class GetById(IMediator mediator)
   public override void Configure()
   {
     Get(GetContributorByIdRequest.Route);
-    AllowAnonymous();
+    Policies(AuthorizationConfig.RequireAuthenticatedUser);
 
     // Optional: document statuses for Swagger
     Summary(s =>

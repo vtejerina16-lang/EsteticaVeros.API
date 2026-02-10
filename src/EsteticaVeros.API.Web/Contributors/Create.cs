@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using EsteticaVeros.API.Core.ContributorAggregate;
 using EsteticaVeros.API.UseCases.Contributors.Create;
+using EsteticaVeros.API.Web.Configurations;
 using EsteticaVeros.API.Web.Extensions;
 using FluentValidation;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -23,7 +24,8 @@ public class Create(IMediator mediator)
   public override void Configure()
   {
     Post(CreateContributorRequest.Route);
-    AllowAnonymous();
+    Policies(AuthorizationConfig.RequireAdminOrManager);
+    
     Summary(s =>
     {
       s.Summary = "Create a new contributor";

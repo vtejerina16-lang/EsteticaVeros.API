@@ -21,8 +21,10 @@
     <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk/18.0.1/build/net8.0/Microsoft.NET.Test.Sdk.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk/18.0.1/build/net8.0/Microsoft.NET.Test.Sdk.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.11.0/buildTransitive/Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.11.0/buildTransitive/Microsoft.CodeAnalysis.Analyzers.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/home/yami/.nuget/packages/xunit.analyzers/1.18.0</Pkgxunit_analyzers>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/home/yami/.nuget/packages/microsoft.codeanalysis.analyzers/3.11.0</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

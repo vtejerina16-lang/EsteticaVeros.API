@@ -2,6 +2,9 @@
 
   <ItemGroup>
     <PackageReference Include="Ardalis.Result" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" />
   </ItemGroup>
 
   <ItemGroup>

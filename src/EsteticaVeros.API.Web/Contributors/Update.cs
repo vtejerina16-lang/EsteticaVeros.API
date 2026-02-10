@@ -2,6 +2,7 @@
 using EsteticaVeros.API.UseCases.Contributors;
 using EsteticaVeros.API.UseCases.Contributors.Get;
 using EsteticaVeros.API.UseCases.Contributors.Update;
+using EsteticaVeros.API.Web.Configurations;
 using EsteticaVeros.API.Web.Extensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -18,7 +19,7 @@ public class Update(IMediator mediator)
   public override void Configure()
   {
     Put(UpdateContributorRequest.Route);
-    AllowAnonymous();
+    Policies(AuthorizationConfig.RequireAdminOrManager);
 
     // Optional but nice: enumerate for Swagger
     Summary(s =>

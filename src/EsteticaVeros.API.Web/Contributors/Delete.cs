@@ -1,5 +1,6 @@
 ﻿using EsteticaVeros.API.Core.ContributorAggregate;
 using EsteticaVeros.API.UseCases.Contributors.Delete;
+using EsteticaVeros.API.Web.Configurations;
 using EsteticaVeros.API.Web.Extensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -17,7 +18,8 @@ public class Delete
   public override void Configure()
   {
     Delete(DeleteContributorRequest.Route);
-    AllowAnonymous();
+    Policies(AuthorizationConfig.RequireAdminRole);
+    
     Summary(s =>
     {
       s.Summary = "Delete a contributor";
