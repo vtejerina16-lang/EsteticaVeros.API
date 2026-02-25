@@ -62,7 +62,8 @@ public class CreateUserValidator : Validator<CreateUserRequest>
     return new[]
     {
       AuthorizationConfig.AdminRole,
-      AuthorizationConfig.ReceptionistRole
+      AuthorizationConfig.ManagerRole,
+      AuthorizationConfig.AssistantRole
     };
   }
 }

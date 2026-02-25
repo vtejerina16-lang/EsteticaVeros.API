@@ -60,8 +60,7 @@ public class UpdateUserValidator : Validator<UpdateUserRequest>
     {
       AuthorizationConfig.AdminRole,
       AuthorizationConfig.ManagerRole,
-      AuthorizationConfig.SpecialistRole,
-      AuthorizationConfig.ReceptionistRole
+      AuthorizationConfig.AssistantRole
     };
   }
 }

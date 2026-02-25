@@ -35,12 +35,22 @@ public class ApplicationRoleConfiguration : IEntityTypeConfiguration<Application
       new ApplicationRole
       {
         Id = 2,
-        Name = "Receptionist",
-        NormalizedName = "RECEPTIONIST",
-        Description = "Recepcionista - Acceso limitado a funciones de recepcion",
+        Name = "Manager",
+        NormalizedName = "MANAGER",
+        Description = "Gerente - Acceso a funciones de gestión y reportes",
         IsActive = true,
         CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc),
         ConcurrencyStamp = "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      new ApplicationRole
+      {
+        Id = 3,
+        Name = "Assistant",
+        NormalizedName = "ASSISTANT",
+        Description = "Asistente - Acceso a funciones básicas y soporte",
+        IsActive = true,
+        CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc),
+        ConcurrencyStamp = "c3d4e5f6-a7b8-9012-cdef-123456789012"
       }
     );
   }

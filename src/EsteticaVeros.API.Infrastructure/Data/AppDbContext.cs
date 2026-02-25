@@ -1,4 +1,5 @@
 ﻿using EsteticaVeros.API.Core.ContributorAggregate;
+using EsteticaVeros.API.Core.CustomerAggregate;
 using EsteticaVeros.API.Core.IdentityAggregate;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -21,6 +22,7 @@ public class AppDbContext : IdentityDbContext<
 
   // DbSets existentes
   public DbSet<Contributor> Contributors => Set<Contributor>();
+  public DbSet<Customer> Customers => Set<Customer>();
 
   // Los DbSets de Identity ya están incluidos en IdentityDbContext:
   // - Users (ApplicationUser)

@@ -193,7 +193,8 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                 values: new object[,]
                 {
                     { 1, "a1b2c3d4-e5f6-7890-abcd-ef1234567890", new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc), "Administrador - Acceso completo al sistema", true, "Administrator", "ADMINISTRATOR" },
-                    { 2, "b2c3d4e5-f6a7-8901-bcde-f12345678901", new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc), "Recepcionista - Acceso limitado a funciones de recepcion", true, "Receptionist", "RECEPTIONIST" }
+                    { 2, "b2c3d4e5-f6a7-8901-bcde-f12345678901", new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc), "Gerente - Acceso a funciones de gestión y reportes", true, "Manager", "MANAGER" },
+                    { 3, "c3d4e5f6-a7b8-9012-cdef-123456789012", new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc), "Asistente - Acceso a funciones básicas y soporte", true, "Assistant", "ASSISTANT" }
                 });
 
             migrationBuilder.InsertData(

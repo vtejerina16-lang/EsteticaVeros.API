@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EsteticaVeros.API.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260210064826_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260221135235_AddCustomerAggregate")]
+    partial class AddCustomerAggregate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,126 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contributors");
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.CustomerAggregate.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Allergies")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("LastVisitDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LoyaltyPoints")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<string>("MedicalConditions")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Medications")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("PreferredAssistantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProfilePictureUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal>("TotalSpent")
+                        .ValueGeneratedOnAdd()
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasDefaultValue(0m);
+
+                    b.Property<int>("TotalVisits")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("CustomerNumber")
+                        .IsUnique();
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("IsActive");
+
+                    b.HasIndex("LastVisitDate");
+
+                    b.HasIndex("PhoneNumber");
+
+                    b.HasIndex("PreferredAssistantId");
+
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("EsteticaVeros.API.Core.IdentityAggregate.ApplicationRole", b =>
@@ -102,10 +222,20 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                             Id = 2,
                             ConcurrencyStamp = "b2c3d4e5-f6a7-8901-bcde-f12345678901",
                             CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Recepcionista - Acceso limitado a funciones de recepcion",
+                            Description = "Gerente - Acceso a funciones de gestión y reportes",
                             IsActive = true,
-                            Name = "Receptionist",
-                            NormalizedName = "RECEPTIONIST"
+                            Name = "Manager",
+                            NormalizedName = "MANAGER"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ConcurrencyStamp = "c3d4e5f6-a7b8-9012-cdef-123456789012",
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "Asistente - Acceso a funciones básicas y soporte",
+                            IsActive = true,
+                            Name = "Assistant",
+                            NormalizedName = "ASSISTANT"
                         });
                 });
 
