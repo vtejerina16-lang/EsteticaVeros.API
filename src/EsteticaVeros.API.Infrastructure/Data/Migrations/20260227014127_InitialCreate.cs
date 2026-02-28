@@ -30,6 +30,40 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Gender = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    City = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Allergies = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    MedicalConditions = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Medications = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    PreferredAssistantId = table.Column<int>(type: "int", nullable: true),
+                    ProfilePictureUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    LoyaltyPoints = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    TotalSpent = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false, defaultValue: 0m),
+                    TotalVisits = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    LastVisitDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedByUserId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -45,6 +79,63 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ServiceCategories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CategoryNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    IconName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ColorCode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedByUserId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ServiceCategories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Services",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ServiceNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    ServiceType = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    ShortDescription = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    Duration = table.Column<int>(type: "int", nullable: false),
+                    BasePrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    OriginalPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: true),
+                    DiscountPercentage = table.Column<decimal>(type: "decimal(5,2)", precision: 5, scale: 2, nullable: true),
+                    LoyaltyPointsEarned = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    RequiresDeposit = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    DepositAmount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    IsFeatured = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    ImageUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    PreparationInstructions = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    Contraindications = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedByUserId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Services", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -98,6 +189,37 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                         name: "FK_RoleClaims_Roles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "Roles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ServiceItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ParentServiceId = table.Column<int>(type: "int", nullable: false),
+                    ChildServiceId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    Notes = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ServiceItems", x => x.Id);
+                    table.CheckConstraint("CK_ServiceItem_NoSelfReference", "[ParentServiceId] <> [ChildServiceId]");
+                    table.ForeignKey(
+                        name: "FK_ServiceItems_Services_ChildServiceId",
+                        column: x => x.ChildServiceId,
+                        principalTable: "Services",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ServiceItems_Services_ParentServiceId",
+                        column: x => x.ParentServiceId,
+                        principalTable: "Services",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -208,6 +330,44 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                 values: new object[] { 1, 1 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Customers_CreatedAt",
+                table: "Customers",
+                column: "CreatedAt");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_CustomerNumber",
+                table: "Customers",
+                column: "CustomerNumber",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_Email",
+                table: "Customers",
+                column: "Email",
+                unique: true,
+                filter: "[Email] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_IsActive",
+                table: "Customers",
+                column: "IsActive");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_LastVisitDate",
+                table: "Customers",
+                column: "LastVisitDate");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_PhoneNumber",
+                table: "Customers",
+                column: "PhoneNumber");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customers_PreferredAssistantId",
+                table: "Customers",
+                column: "PreferredAssistantId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RoleClaims_RoleId",
                 table: "RoleClaims",
                 column: "RoleId");
@@ -223,6 +383,84 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                 column: "NormalizedName",
                 unique: true,
                 filter: "[NormalizedName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceCategories_CategoryNumber",
+                table: "ServiceCategories",
+                column: "CategoryNumber",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceCategories_DisplayOrder",
+                table: "ServiceCategories",
+                column: "DisplayOrder");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceCategories_IsActive",
+                table: "ServiceCategories",
+                column: "IsActive");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceCategories_Name",
+                table: "ServiceCategories",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceItems_ChildServiceId",
+                table: "ServiceItems",
+                column: "ChildServiceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceItems_ParentServiceId",
+                table: "ServiceItems",
+                column: "ParentServiceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceItems_ParentServiceId_ChildServiceId",
+                table: "ServiceItems",
+                columns: new[] { "ParentServiceId", "ChildServiceId" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_BasePrice",
+                table: "Services",
+                column: "BasePrice");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_CategoryId",
+                table: "Services",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_DisplayOrder",
+                table: "Services",
+                column: "DisplayOrder");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_IsActive",
+                table: "Services",
+                column: "IsActive");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_IsFeatured",
+                table: "Services",
+                column: "IsFeatured");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_Name",
+                table: "Services",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_ServiceNumber",
+                table: "Services",
+                column: "ServiceNumber",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Services_ServiceType",
+                table: "Services",
+                column: "ServiceType");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserClaims_UserId",
@@ -269,7 +507,16 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                 name: "Contributors");
 
             migrationBuilder.DropTable(
+                name: "Customers");
+
+            migrationBuilder.DropTable(
                 name: "RoleClaims");
+
+            migrationBuilder.DropTable(
+                name: "ServiceCategories");
+
+            migrationBuilder.DropTable(
+                name: "ServiceItems");
 
             migrationBuilder.DropTable(
                 name: "UserClaims");
@@ -282,6 +529,9 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Services");
 
             migrationBuilder.DropTable(
                 name: "Roles");
