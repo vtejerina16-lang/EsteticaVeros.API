@@ -22,6 +22,415 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("EsteticaVeros.API.Core.AppointmentAggregate.Appointment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ActualDuration")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ActualEndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ActualStartTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("AppointmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("AppointmentNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int?>("AssignedAssistantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CancellationReason")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime?>("CancelledAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CancelledBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ConfirmedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("ConfirmedByCustomer")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerNotes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal?>("DepositAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("DepositPaid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("EstimatedDuration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("InternalNotes")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<bool>("IsRecurring")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("NoShowReason")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<int?>("ParentAppointmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentStatus")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RecurrenceEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RecurrencePattern")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("ReminderSent")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("ReminderSentAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Source")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentDate");
+
+                    b.HasIndex("AppointmentNumber")
+                        .IsUnique();
+
+                    b.HasIndex("AssignedAssistantId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ParentAppointmentId");
+
+                    b.HasIndex("PaymentStatus");
+
+                    b.HasIndex("Source");
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("AppointmentDate", "Status");
+
+                    b.HasIndex("AssignedAssistantId", "AppointmentDate");
+
+                    b.HasIndex("CustomerId", "AppointmentDate");
+
+                    b.ToTable("Appointments", (string)null);
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.AppointmentAggregate.AppointmentService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AppointmentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CompletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("Discount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("DisplayOrder")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("FinalPrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ServiceName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("StartedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentId");
+
+                    b.HasIndex("ServiceId");
+
+                    b.HasIndex("Status");
+
+                    b.ToTable("AppointmentServices", (string)null);
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.AppointmentSettingsAggregate.AppointmentSettings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BufferTime")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CancellationWindowHours")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("DepositPercentage")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<bool>("EnableRecurringAppointments")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MaxAdvanceBookingDays")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaxConcurrentAppointments")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("NoShowPenaltyPercentage")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<int>("ReminderHoursBefore")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("RequireDepositForCustomServices")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("SlotDuration")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppointmentSettings", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BufferTime = 15,
+                            CancellationWindowHours = 1,
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DepositPercentage = 20m,
+                            EnableRecurringAppointments = true,
+                            MaxAdvanceBookingDays = 60,
+                            MaxConcurrentAppointments = 2,
+                            NoShowPenaltyPercentage = 10m,
+                            ReminderHoursBefore = 24,
+                            RequireDepositForCustomServices = true,
+                            SlotDuration = 30
+                        });
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.BusinessHoursAggregate.BusinessHour", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<TimeSpan?>("AfternoonEndTime")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("AfternoonStartTime")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DayOfWeek")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsWorkingDay")
+                        .HasColumnType("bit");
+
+                    b.Property<TimeSpan?>("MorningEndTime")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("MorningStartTime")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DayOfWeek")
+                        .IsUnique();
+
+                    b.ToTable("BusinessHours", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DayOfWeek = 1,
+                            IsActive = true,
+                            IsWorkingDay = true,
+                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DayOfWeek = 2,
+                            IsActive = true,
+                            IsWorkingDay = true,
+                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DayOfWeek = 3,
+                            IsActive = true,
+                            IsWorkingDay = true,
+                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DayOfWeek = 4,
+                            IsActive = true,
+                            IsWorkingDay = true,
+                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DayOfWeek = 5,
+                            IsActive = true,
+                            IsWorkingDay = true,
+                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DayOfWeek = 6,
+                            IsActive = true,
+                            IsWorkingDay = true,
+                            MorningEndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DayOfWeek = 0,
+                            IsActive = true,
+                            IsWorkingDay = false
+                        });
+                });
+
             modelBuilder.Entity("EsteticaVeros.API.Core.ContributorAggregate.Contributor", b =>
                 {
                     b.Property<int>("Id")
@@ -704,6 +1113,17 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                     b.ToTable("UserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("EsteticaVeros.API.Core.AppointmentAggregate.AppointmentService", b =>
+                {
+                    b.HasOne("EsteticaVeros.API.Core.AppointmentAggregate.Appointment", "Appointment")
+                        .WithMany("AppointmentServices")
+                        .HasForeignKey("AppointmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Appointment");
+                });
+
             modelBuilder.Entity("EsteticaVeros.API.Core.ContributorAggregate.Contributor", b =>
                 {
                     b.OwnsOne("EsteticaVeros.API.Core.ContributorAggregate.PhoneNumber", "PhoneNumber", b1 =>
@@ -809,6 +1229,11 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.AppointmentAggregate.Appointment", b =>
+                {
+                    b.Navigation("AppointmentServices");
                 });
 
             modelBuilder.Entity("EsteticaVeros.API.Core.ServiceAggregate.Service", b =>

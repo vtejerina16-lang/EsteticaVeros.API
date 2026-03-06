@@ -2,6 +2,9 @@
 using EsteticaVeros.API.Core.CustomerAggregate;
 using EsteticaVeros.API.Core.ServiceCategoryAggregate;
 using EsteticaVeros.API.Core.ServiceAggregate;
+using EsteticaVeros.API.Core.BusinessHoursAggregate;
+using EsteticaVeros.API.Core.AppointmentSettingsAggregate;
+using EsteticaVeros.API.Core.AppointmentAggregate;
 using EsteticaVeros.API.Core.IdentityAggregate;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -28,6 +31,10 @@ public class AppDbContext : IdentityDbContext<
   public DbSet<ServiceCategory> ServiceCategories => Set<ServiceCategory>();
   public DbSet<Service> Services => Set<Service>();
   public DbSet<ServiceItem> ServiceItems => Set<ServiceItem>();
+  public DbSet<BusinessHour> BusinessHours => Set<BusinessHour>();
+  public DbSet<AppointmentSettings> AppointmentSettings => Set<AppointmentSettings>();
+  public DbSet<Appointment> Appointments => Set<Appointment>();
+  public DbSet<AppointmentService> AppointmentServices => Set<AppointmentService>();
 
   // Los DbSets de Identity ya están incluidos en IdentityDbContext:
   // - Users (ApplicationUser)
