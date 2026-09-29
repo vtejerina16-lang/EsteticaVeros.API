@@ -2,13 +2,26 @@
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults()    // This sets up OpenTelemetry logging
-       .AddLoggerConfigs();     // This adds Serilog for console formatting
+// --- CONFIGURACIÓN DE SERVICIOS ---
+
+builder.AddServiceDefaults() 
+       .AddLoggerConfigs(); 
 
 using var loggerFactory = LoggerFactory.Create(config => config.AddConsole());
 var startupLogger = loggerFactory.CreateLogger<Program>();
 
-startupLogger.LogInformation("Starting web host");
+startupLogger.LogInformation("Iniciando Web Host con Parche de CORS");
+
+// 1. REGISTRO DEL PARCHE (Permite todo desde cualquier lugar)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ParcheCORS", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 builder.Services.AddOptionConfigs(builder.Configuration, startupLogger, builder);
 builder.Services.AddServiceConfigs(startupLogger, builder);
@@ -25,19 +38,21 @@ builder.Services.AddFastEndpoints()
                     settings.Title = "EsteticaVeros API";
                     settings.Version = "v1";
                   };
-                  
                   o.EnableJWTBearerAuth = true;
                 });
 
 var app = builder.Build();
 
-app.UseCors(CorsConfig.DefaultPolicyName);
+// --- MIDDLEWARE ---
+
+// 2. APLICACIÓN DEL PARCHE
+// Usamos "ParcheCORS" en lugar de CorsConfig.DefaultPolicyName para forzar la apertura
+app.UseCors("ParcheCORS"); 
 
 await app.UseAppMiddlewareAndSeedDatabase();
 
-app.MapDefaultEndpoints(); // Aspire health checks and metrics
+app.MapDefaultEndpoints(); 
 
 app.Run();
 
-// Make the implicit Program.cs class public, so integration tests can reference the correct assembly for host building
 public partial class Program { }

@@ -1,0 +1,1268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EsteticaVeros.API.Web</name>
+    </assembly>
+    <members>
+        <member name="T:EsteticaVeros.API.Web.Contributors.DeleteContributorValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+        <member name="T:EsteticaVeros.API.Web.Contributors.GetContributorValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+        <member name="T:EsteticaVeros.API.Web.Contributors.UpdateContributorValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+        <member name="M:EsteticaVeros.API.Web.Extensions.ResultExtensions.ToCreatedResult``2(Ardalis.Result.Result{``0},System.Func{``0,System.String},System.Func{``0,``1})">
+            <summary>
+            Maps Result to TypedResults for endpoints that return Created, ValidationProblem, or ProblemHttpResult
+            </summary>
+        </member>
+        <member name="M:EsteticaVeros.API.Web.Extensions.ResultExtensions.ToGetByIdResult``2(Ardalis.Result.Result{``0},System.Func{``0,``1})">
+            <summary>
+            Maps Result to TypedResults for GetById endpoints that return Ok, NotFound, or ProblemHttpResult
+            </summary>
+        </member>
+        <member name="M:EsteticaVeros.API.Web.Extensions.ResultExtensions.ToUpdateResult``2(Ardalis.Result.Result{``0},System.Func{``0,``1})">
+            <summary>
+            Maps Result to TypedResults for Update endpoints that return Ok, NotFound, or ProblemHttpResult
+            </summary>
+        </member>
+        <member name="M:EsteticaVeros.API.Web.Extensions.ResultExtensions.ToDeleteResult(Ardalis.Result.Result)">
+            <summary>
+            Maps Result to TypedResults for Delete endpoints that return NoContent, NotFound, or ProblemHttpResult
+            </summary>
+        </member>
+        <member name="M:EsteticaVeros.API.Web.Extensions.ResultExtensions.ToOkOrNotFoundResult``2(Ardalis.Result.Result{``0},System.Func{``0,``1},System.String)">
+            <summary>
+            Private helper method for Ok/NotFound result patterns
+            </summary>
+        </member>
+        <member name="M:EsteticaVeros.API.Web.Extensions.ResultExtensions.ToOkOnlyResult``2(Ardalis.Result.Result{``0},System.Func{``0,``1})">
+            <summary>
+            Maps Result to TypedResults for endpoints that return Ok only (like List endpoints)
+            </summary>
+        </member>
+        <member name="T:EsteticaVeros.API.Web.Identity.DeactivateUserValidator">
+            <summary>
+            Validator for deactivating a user request.
+            Ensures the user ID is valid.
+            </summary>
+        </member>
+        <member name="T:EsteticaVeros.API.Web.Identity.GetUserByIdValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+        <member name="T:EsteticaVeros.API.Web.Identity.UpdateUserValidator">
+            <summary>
+            Validator for updating a user.
+            Ensures all required fields are valid and route/body IDs match.
+            </summary>
+        </member>
+        <member name="T:Mediator.MediatorOptions">
+            <summary>
+            Provide options for the Mediator source generator.
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptions.Namespace">
+            <summary>
+            The namespace in which the Mediator implementation is generated.
+            By default, the namespace is "Mediator".
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptions.GenerateTypesAsInternal">
+            <summary>
+            Wether or not generated types should be <c>internal</c> (they are public by default).
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptions.NotificationPublisherType">
+            <summary>
+            The <see cref="T:Mediator.INotificationPublisher" /> type to use when publishing notifications.
+            By default, the type is <see cref="T:Mediator.ForeachAwaitPublisher" />.
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptions.ServiceLifetime">
+            <summary>
+            The default lifetime of the services registered in the DI container by the Mediator source generator.
+            By default, the lifetime is <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton" />.
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptions.Assemblies">
+            <summary>
+            The collection of assemblies to scan for Mediator handlers.
+            By default, the collection is empty, in which case the source generator will scan all assemblies through references from the source generated project.
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptions.PipelineBehaviors">
+            <summary>
+            The collection of types of pipeline behaviors to register in DI.
+            When the type is an unconstructed generic type, the source generator will register all the constructed types of the generic type (open generics that is supported during AoT).
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptions.StreamPipelineBehaviors">
+            <summary>
+            The collection of types of streaming pipeline behaviors to register in DI.
+            When the type is an unconstructed generic type, the source generator will register all the constructed types of the generic type (open generics that is supported during AoT).
+            </summary>
+        </member>
+        <member name="T:Mediator.MediatorOptionsAttribute">
+            <summary>
+            Provide options for the Mediator source generator.
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptionsAttribute.Namespace">
+            <summary>
+            The namespace in which the Mediator implementation is generated.
+            By default, the namespace is "Mediator".
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptionsAttribute.NotificationPublisherType">
+            <summary>
+            The <see cref="T:Mediator.INotificationPublisher" /> type to use when publishing notifications.
+            By default, the type is <see cref="T:Mediator.ForeachAwaitPublisher" />.
+            </summary>
+        </member>
+        <member name="P:Mediator.MediatorOptionsAttribute.ServiceLifetime">
+            <summary>
+            The default lifetime of the services registered in the DI container by the Mediator source generator.
+            By default, the lifetime is <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton" />.
+            </summary>
+        </member>
+        <member name="T:Mediator.AssemblyReference">
+            <summary>
+            Represents an assembly reference.
+            This is used to specify the types or assemblies to scan for Mediator handlers.
+            </summary>
+        </member>
+        <member name="P:Mediator.AssemblyReference.Assembly">
+            <summary>
+            The assembly reference.
+            </summary>
+        </member>
+        <member name="M:Mediator.AssemblyReference.op_Implicit(System.Type)~Mediator.AssemblyReference">
+            <summary>
+            Creates a new instance of <see cref="T:Mediator.AssemblyReference" /> from the specified type.
+            </summary>
+            <param name="type">The type</param>
+            <returns>A new instance of <see cref="T:Mediator.AssemblyReference" /></returns>
+        </member>
+        <member name="M:Mediator.AssemblyReference.op_Implicit(System.Reflection.Assembly)~Mediator.AssemblyReference">
+            <summary>
+            Creates a new instance of <see cref="T:Mediator.AssemblyReference" /> from the specified assembly.
+            </summary>
+            <param name="assembly">The assembly</param>
+            <returns>A new instance of <see cref="T:Mediator.AssemblyReference" /></returns>
+        </member>
+        <member name="T:Mediator.Mediator">
+            <summary>
+            Generated code for Mediator implementation.
+            This type is also registered as a DI service.
+            Can be used directly for high performance scenarios.
+            </summary>
+        </member>
+        <member name="F:Mediator.Mediator.ServiceLifetime">
+            <summary>
+            The lifetime of Mediator-related service registrations in DI container.
+            </summary>
+        </member>
+        <member name="F:Mediator.Mediator.NotificationPublisherName">
+            <summary>
+            The name of the notification publisher service that was configured.
+            </summary>
+        </member>
+        <member name="F:Mediator.Mediator.TotalMessages">
+            <summary>
+            The total number of Mediator messages that were discovered.
+            </summary>
+        </member>
+        <member name="M:Mediator.Mediator.#ctor(System.IServiceProvider)">
+            <summary>
+            Constructor for DI, should not be used by consumer.
+            </summary>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Cancel.CancelAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.Cancel.CancelAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Customers.Create.CreateCustomerCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Customers.Create.CreateCustomerCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Customers.Delete.DeleteCustomerCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Customers.Delete.DeleteCustomerCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Customers.Update.UpdateCustomerCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Customers.Update.UpdateCustomerCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Identity.CreateUser.CreateUserCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Identity.CreateUser.CreateUserCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Identity.DeactivateUser.DeactivateUserCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Identity.DeactivateUser.DeactivateUserCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Identity.Login.LoginCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Identity.Login.LoginCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Identity.UpdateUser.UpdateUserCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Identity.UpdateUser.UpdateUserCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.PaymentMethods.Activate.ActivatePaymentMethodCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.PaymentMethods.Activate.ActivatePaymentMethodCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.PaymentMethods.Create.CreatePaymentMethodCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.PaymentMethods.Create.CreatePaymentMethodCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.PaymentMethods.Deactivate.DeactivatePaymentMethodCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.PaymentMethods.Deactivate.DeactivatePaymentMethodCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Services.Delete.DeleteServiceCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Services.Delete.DeleteServiceCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Services.Create.CreateServiceCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Services.Create.CreateServiceCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.ServiceCategories.Update.UpdateServiceCategoryCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.ServiceCategories.Update.UpdateServiceCategoryCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Contributors.Update.UpdateContributorCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Contributors.Update.UpdateContributorCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.ServiceCategories.Delete.DeleteServiceCategoryCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.ServiceCategories.Delete.DeleteServiceCategoryCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Payments.Refund.RefundPaymentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Payments.Refund.RefundPaymentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Payments.Create.CreatePaymentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Payments.Create.CreatePaymentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Payments.Cancel.CancelPaymentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Payments.Cancel.CancelPaymentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.PaymentMethods.Update.UpdatePaymentMethodCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.PaymentMethods.Update.UpdatePaymentMethodCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.ServiceCategories.Create.CreateServiceCategoryCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.ServiceCategories.Create.CreateServiceCategoryCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Contributors.Delete.DeleteContributorCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Contributors.Delete.DeleteContributorCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.CheckIn.CheckInAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.CheckIn.CheckInAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Complete.CompleteAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.Complete.CompleteAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Confirm.ConfirmAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.Confirm.ConfirmAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Create.CreateAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.Create.CreateAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.MarkNoShow.MarkNoShowCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.MarkNoShow.MarkNoShowCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Reschedule.RescheduleAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.Reschedule.RescheduleAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Start.StartAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.Start.StartAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Update.UpdateAppointmentCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Appointments.Update.UpdateAppointmentCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashMovements.Create.CreateCashMovementCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashMovements.Create.CreateCashMovementCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashReconciliations.Approve.ApproveCashReconciliationCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashReconciliations.Approve.ApproveCashReconciliationCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashReconciliations.Create.CreateCashReconciliationCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashReconciliations.Create.CreateCashReconciliationCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Contributors.Create.CreateContributorCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Contributors.Create.CreateContributorCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisters.Update.UpdateCashRegisterCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashRegisters.Update.UpdateCashRegisterCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisters.Deactivate.DeactivateCashRegisterCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashRegisters.Deactivate.DeactivateCashRegisterCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisters.Create.CreateCashRegisterCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashRegisters.Create.CreateCashRegisterCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisters.Activate.ActivateCashRegisterCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashRegisters.Activate.ActivateCashRegisterCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisterSessions.Close.CloseCashRegisterSessionCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashRegisterSessions.Close.CloseCashRegisterSessionCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashReconciliations.Reject.RejectCashReconciliationCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashReconciliations.Reject.RejectCashReconciliationCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisterSessions.Open.OpenCashRegisterSessionCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.CashRegisterSessions.Open.OpenCashRegisterSessionCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Services.Update.UpdateServiceCommand,System.Threading.CancellationToken)">
+            <summary>
+            Send a command of type global::EsteticaVeros.API.UseCases.Services.Update.UpdateServiceCommand.
+            Throws <see cref="T:System.ArgumentNullException"/> if command is null.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Customers.Get.GetCustomerQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Customers.Get.GetCustomerQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Customers.List.ListCustomersQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Customers.List.ListCustomersQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Identity.GetCurrentUser.GetCurrentUserQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Identity.GetCurrentUser.GetCurrentUserQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Identity.GetUser.GetUserQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Identity.GetUser.GetUserQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Identity.ListUsers.ListUsersQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Identity.ListUsers.ListUsersQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.PaymentMethods.GetById.GetPaymentMethodByIdQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.PaymentMethods.GetById.GetPaymentMethodByIdQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.PaymentMethods.List.ListPaymentMethodsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.PaymentMethods.List.ListPaymentMethodsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Services.Get.GetServiceQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Services.Get.GetServiceQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.ServiceCategories.List.ListServiceCategoriesQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.ServiceCategories.List.ListServiceCategoriesQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.ServiceCategories.Get.GetServiceCategoryQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.ServiceCategories.Get.GetServiceCategoryQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Payments.List.ListPaymentsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Payments.List.ListPaymentsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Payments.GetById.GetPaymentByIdQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Payments.GetById.GetPaymentByIdQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Services.List.ListServicesQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Services.List.ListServicesQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Contributors.List.ListContributorsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Contributors.List.ListContributorsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.Get.GetAppointmentQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Appointments.Get.GetAppointmentQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.GetAvailableSlots.GetAvailableSlotsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Appointments.GetAvailableSlots.GetAvailableSlotsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Appointments.List.ListAppointmentsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Appointments.List.ListAppointmentsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashMovements.GetById.GetCashMovementByIdQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashMovements.GetById.GetCashMovementByIdQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashMovements.List.ListCashMovementsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashMovements.List.ListCashMovementsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashReconciliations.GetById.GetCashReconciliationByIdQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashReconciliations.GetById.GetCashReconciliationByIdQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisters.List.ListCashRegistersQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashRegisters.List.ListCashRegistersQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisters.GetById.GetCashRegisterByIdQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashRegisters.GetById.GetCashRegisterByIdQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.Contributors.Get.GetContributorQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.Contributors.Get.GetContributorQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisterSessions.List.ListCashRegisterSessionsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashRegisterSessions.List.ListCashRegisterSessionsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisterSessions.GetOpenSession.GetOpenSessionQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashRegisterSessions.GetOpenSession.GetOpenSessionQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashRegisterSessions.GetById.GetCashRegisterSessionByIdQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashRegisterSessions.GetById.GetCashRegisterSessionByIdQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(EsteticaVeros.API.UseCases.CashReconciliations.List.ListCashReconciliationsQuery,System.Threading.CancellationToken)">
+            <summary>
+            Send a query of type global::EsteticaVeros.API.UseCases.CashReconciliations.List.ListCashReconciliationsQuery.
+            Throws <see cref="T:System.ArgumentNullException"/> if query is null.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send``1(Mediator.IRequest{``0},System.Threading.CancellationToken)">
+            <summary>
+            Send request.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if request does not implement <see cref="T:Mediator.IRequest`1"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="request">Incoming request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.CreateStream``1(Mediator.IStreamRequest{``0},System.Threading.CancellationToken)">
+            <summary>
+            Create stream for request.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if request does not implement <see cref="T:Mediator.IStreamRequest`1"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="request">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Async enumerable</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send``1(Mediator.ICommand{``0},System.Threading.CancellationToken)">
+            <summary>
+            Send command.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if command does not implement <see cref="T:Mediator.ICommand`1"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="command">Incoming command</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.CreateStream``1(Mediator.IStreamCommand{``0},System.Threading.CancellationToken)">
+            <summary>
+            Create stream for command.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if command does not implement <see cref="T:Mediator.IStreamCommand`1"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="command">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Async enumerable</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send``1(Mediator.IQuery{``0},System.Threading.CancellationToken)">
+            <summary>
+            Send query.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if query does not implement <see cref="T:Mediator.IQuery`1"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="query">Incoming query</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.CreateStream``1(Mediator.IStreamQuery{``0},System.Threading.CancellationToken)">
+            <summary>
+            Create stream for query.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if query does not implement <see cref="T:Mediator.IStreamQuery`1"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="query">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Async enumerable</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Send(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Send message.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if message does not implement <see cref="T:Mediator.IMessage"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="message">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.CreateStream(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Create stream.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if message does not implement <see cref="T:Mediator.IStreamMessage"/>.
+            Throws <see cref="T:Mediator.MissingMessageHandlerException"/> if no handler is registered.
+            </summary>
+            <param name="message">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Async enumerable</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Publish notification.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if notification does not implement <see cref="T:Mediator.INotification"/>.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            Drops messages
+            </summary>
+            <param name="notification">Incoming notification</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentCancelledEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentCancelledEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceCategoryAggregate.Events.ServiceCategoryCreatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceCategoryAggregate.Events.ServiceCategoryCreatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceUpdatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceUpdatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceAggregate.Events.ServicePriceChangedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceAggregate.Events.ServicePriceChangedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceItemsChangedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceItemsChangedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceDeactivatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceDeactivatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceCreatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceAggregate.Events.ServiceCreatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.PaymentAggregate.Events.PaymentRefundedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.PaymentAggregate.Events.PaymentRefundedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.PaymentAggregate.Events.PaymentCreatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.PaymentAggregate.Events.PaymentCreatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.PaymentAggregate.Events.PaymentCancelledEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.PaymentAggregate.Events.PaymentCancelledEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.IdentityAggregate.Events.UserLoggedInEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.IdentityAggregate.Events.UserLoggedInEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.IdentityAggregate.Events.UserCreatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.IdentityAggregate.Events.UserCreatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CustomerAggregate.Events.CustomerUpdatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CustomerAggregate.Events.CustomerUpdatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CustomerAggregate.Events.CustomerDeactivatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CustomerAggregate.Events.CustomerDeactivatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CustomerAggregate.Events.CustomerCreatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CustomerAggregate.Events.CustomerCreatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceCategoryAggregate.Events.ServiceCategoryDeactivatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceCategoryAggregate.Events.ServiceCategoryDeactivatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ContributorAggregate.Events.ContributorNameUpdatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ContributorAggregate.Events.ContributorNameUpdatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashRegisterSessionReconciledEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashRegisterSessionReconciledEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashRegisterSessionOpenedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashRegisterSessionOpenedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashRegisterSessionClosedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashRegisterSessionClosedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashReconciliationRejectedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashReconciliationRejectedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashReconciliationCreatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashReconciliationCreatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashReconciliationApprovedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashReconciliationApprovedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashMovementCreatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.CashRegisterAggregate.Events.CashMovementCreatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentStartedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentStartedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentScheduledEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentScheduledEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentRescheduledEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentRescheduledEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentNoShowEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentNoShowEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentConfirmedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentConfirmedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentCompletedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentCompletedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentCheckedInEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.AppointmentAggregate.Events.AppointmentCheckedInEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ContributorAggregate.Events.ContributorDeletedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ContributorAggregate.Events.ContributorDeletedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish(EsteticaVeros.API.Core.ServiceCategoryAggregate.Events.ServiceCategoryUpdatedEvent,System.Threading.CancellationToken)">
+            <summary>
+            Send a notification of type global::EsteticaVeros.API.Core.ServiceCategoryAggregate.Events.ServiceCategoryUpdatedEvent.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming message</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="M:Mediator.Mediator.Publish``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            Publish notification.
+            Throws <see cref="T:System.ArgumentNullException"/> if message is null.
+            Throws <see cref="T:Mediator.InvalidMessageException"/> if notification does not implement <see cref="T:Mediator.INotification"/>.
+            Throws <see cref="T:System.AggregateException"/> if handlers throw exception(s).
+            </summary>
+            <param name="notification">Incoming notification</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Awaitable task</returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.MediatorDependencyInjectionExtensions">
+            <summary>
+            DI extensions for Mediator.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.MediatorDependencyInjectionExtensions.AddMediator(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the Mediator implementation and handlers of your application.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.MediatorDependencyInjectionExtensions.AddMediator(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Mediator.MediatorOptions})">
+            <summary>
+            Adds the Mediator implementation and handlers of your application, with specified options.
+            </summary>
+        </member>
+    </members>
+</doc>

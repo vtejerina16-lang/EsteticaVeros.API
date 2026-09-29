@@ -80,15 +80,10 @@ public class Service : EntityBase, IAggregateRoot
       throw new InvalidOperationException("Use the regular constructor for Simple services.");
     }
 
-    // Para Composite debe tener categoryId, para Package debe ser null
-    if (serviceType == ServiceType.Composite && !categoryId.HasValue)
+    // ✅ Permite CategoryId en Composite y Package
+    if (!categoryId.HasValue || categoryId <= 0)
     {
-      throw new InvalidOperationException("Composite services must have a CategoryId.");
-    }
-
-    if (serviceType == ServiceType.Package && categoryId.HasValue)
-    {
-      throw new InvalidOperationException("Packages cannot have a single CategoryId.");
+      throw new InvalidOperationException("Services must have a valid CategoryId.");
     }
 
     var service = new Service
@@ -160,6 +155,19 @@ public class Service : EntityBase, IAggregateRoot
   }
 
   // Update methods
+  public Service UpdateCategory(int? categoryId)
+  {
+    // ✅ Se removió la condición que forzaba CategoryId = null cuando el tipo era Package
+    if (!categoryId.HasValue || categoryId <= 0)
+    {
+      throw new InvalidOperationException("La categoría es obligatoria.");
+    }
+
+    CategoryId = categoryId;
+    UpdatedAt = DateTime.UtcNow;
+    return this;
+  }
+
   public Service UpdateBasicInfo(string name, string? description, string? shortDescription)
   {
     Name = Guard.Against.NullOrWhiteSpace(name);

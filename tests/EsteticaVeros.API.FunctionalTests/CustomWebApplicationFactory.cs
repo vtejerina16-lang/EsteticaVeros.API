@@ -1,4 +1,5 @@
 ﻿using EsteticaVeros.API.Infrastructure.Data;
+using EsteticaVeros.API.Infrastructure.Data.SeedData;
 using Microsoft.EntityFrameworkCore;
 using Testcontainers.MsSql;
 

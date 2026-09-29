@@ -80,6 +80,21 @@ public class Appointment : EntityBase, IAggregateRoot
     RegisterDomainEvent(new AppointmentScheduledEvent(this));
   }
 
+  // Reschedule date/time
+  public Appointment Reschedule(DateTime newDate)
+  {
+    if (newDate <= DateTime.UtcNow)
+    {
+      throw new InvalidOperationException("Appointment date must be in the future.");
+    }
+
+    AppointmentDate = newDate;
+    UpdatedAt = DateTime.UtcNow;
+
+    RegisterDomainEvent(new AppointmentRescheduledEvent(this));
+    return this;
+  }
+
   // Add service to appointment
   public Appointment AddService(
     int serviceId,
@@ -158,21 +173,18 @@ public class Appointment : EntityBase, IAggregateRoot
   // Check-in
   public Appointment CheckIn()
   {
-    if (Status != AppointmentStatus.Scheduled && Status != AppointmentStatus.Confirmed)
+    if (Status != AppointmentStatus.Scheduled &&
+        Status != AppointmentStatus.Confirmed)
     {
-      throw new InvalidOperationException($"Cannot check-in appointment in {Status.DisplayName} status.");
-    }
-
-    // Validar que sea el día de la cita
-    if (AppointmentDate.Date != DateTime.UtcNow.Date)
-    {
-      throw new InvalidOperationException("Can only check-in on the appointment date.");
+        throw new InvalidOperationException(
+            $"Cannot check-in appointment in {Status.DisplayName} status.");
     }
 
     Status = AppointmentStatus.CheckedIn;
     UpdatedAt = DateTime.UtcNow;
 
     RegisterDomainEvent(new AppointmentCheckedInEvent(this));
+
     return this;
   }
 

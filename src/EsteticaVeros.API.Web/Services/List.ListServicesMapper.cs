@@ -15,7 +15,9 @@ public sealed class ListServicesMapper
         s.ServiceTypeName,
         s.Duration,
         s.BasePrice,
-        s.IsActive
+        s.IsActive,
+        s.CategoryId,
+        s.CategoryName
       ))
       .ToList();
 

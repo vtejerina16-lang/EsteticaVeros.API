@@ -76,8 +76,9 @@ public class UpdateAppointmentHandler(
           return conflictValidation;
         }
 
-        // Actualizar fecha (esto requiere reflexión o agregar método en la entidad)
-        // Por ahora, usaremos un workaround guardando y recreando
+        // Actualizar fecha mediante el método de dominio
+        appointment.Reschedule(command.AppointmentDate.Value);
+
         logger.LogInformation(
           "Appointment date updated: {OldDate} -> {NewDate}",
           appointment.AppointmentDate,

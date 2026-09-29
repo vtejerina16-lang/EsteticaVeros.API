@@ -4,13 +4,13 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/yami/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/yami/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/v_tej/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/v_tej/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">7.0.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/home/yami/.nuget/packages/" />
+    <SourceRoot Include="/home/v_tej/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.props')" />
@@ -19,8 +19,8 @@
     <Import Project="$(NuGetPackageRoot)aspire.dashboard.sdk.linux-x64/13.0.0/buildTransitive/Aspire.Dashboard.Sdk.linux-x64.props" Condition="Exists('$(NuGetPackageRoot)aspire.dashboard.sdk.linux-x64/13.0.0/buildTransitive/Aspire.Dashboard.Sdk.linux-x64.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgGrpc_Tools Condition=" '$(PkgGrpc_Tools)' == '' ">/home/yami/.nuget/packages/grpc.tools/2.72.0</PkgGrpc_Tools>
-    <PkgAspire_Hosting_Orchestration_linux-x64 Condition=" '$(PkgAspire_Hosting_Orchestration_linux-x64)' == '' ">/home/yami/.nuget/packages/aspire.hosting.orchestration.linux-x64/13.0.0</PkgAspire_Hosting_Orchestration_linux-x64>
-    <PkgAspire_Dashboard_Sdk_linux-x64 Condition=" '$(PkgAspire_Dashboard_Sdk_linux-x64)' == '' ">/home/yami/.nuget/packages/aspire.dashboard.sdk.linux-x64/13.0.0</PkgAspire_Dashboard_Sdk_linux-x64>
+    <PkgGrpc_Tools Condition=" '$(PkgGrpc_Tools)' == '' ">/home/v_tej/.nuget/packages/grpc.tools/2.72.0</PkgGrpc_Tools>
+    <PkgAspire_Hosting_Orchestration_linux-x64 Condition=" '$(PkgAspire_Hosting_Orchestration_linux-x64)' == '' ">/home/v_tej/.nuget/packages/aspire.hosting.orchestration.linux-x64/13.0.0</PkgAspire_Hosting_Orchestration_linux-x64>
+    <PkgAspire_Dashboard_Sdk_linux-x64 Condition=" '$(PkgAspire_Dashboard_Sdk_linux-x64)' == '' ">/home/v_tej/.nuget/packages/aspire.dashboard.sdk.linux-x64/13.0.0</PkgAspire_Dashboard_Sdk_linux-x64>
   </PropertyGroup>
 </Project>

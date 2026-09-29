@@ -1797,27 +1797,27 @@
     ]
   },
   "packageFolders": {
-    "/home/yami/.nuget/packages/": {}
+    "/home/v_tej/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj",
+      "projectUniqueName": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj",
       "projectName": "EsteticaVeros.API.UseCases",
-      "projectPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj",
-      "packagesPath": "/home/yami/.nuget/packages/",
-      "outputPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/obj/",
+      "projectPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj",
+      "packagesPath": "/home/v_tej/.nuget/packages/",
+      "outputPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/obj/",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
-        "/mnt/d/Projects/EsteticaVeros.API/nuget.config",
-        "/home/yami/.nuget/NuGet/NuGet.Config"
+        "/home/v_tej/proyectos/EsteticaVeros.API/nuget.config",
+        "/home/v_tej/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "/mnt/d/Projects/EsteticaVeros.API/c:\\LocalNuget": {},
+        "/home/v_tej/proyectos/EsteticaVeros.API/c:\\LocalNuget": {},
         "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -1825,14 +1825,13 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.Core/EsteticaVeros.API.Core.csproj": {
-              "projectPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.Core/EsteticaVeros.API.Core.csproj"
+            "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.Core/EsteticaVeros.API.Core.csproj": {
+              "projectPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.Core/EsteticaVeros.API.Core.csproj"
             }
           }
         }
       },
       "warningProperties": {
-        "allWarningsAsErrors": true,
         "warnAsError": [
           "NU1605"
         ]
@@ -1887,7 +1886,7 @@
           "FastEndpoints": "7.1.1",
           "FastEndpoints.ApiExplorer": "2.2.0",
           "FastEndpoints.Swagger": "7.1.1",
-          "MailKit": "4.14.1",
+          "MailKit": "4.15.1",
           "Mediator.Abstractions": "3.0.1",
           "Mediator.SourceGenerator": "3.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
@@ -1918,6 +1917,7 @@
           "OpenTelemetry.Instrumentation.Runtime": "1.13.0",
           "ReportGenerator": "5.5.0",
           "Scalar.AspNetCore": "2.10.3",
+          "Scriban": "6.3.0",
           "Serilog.AspNetCore": "9.0.0",
           "Serilog.Sinks.OpenTelemetry": "4.2.0",
           "Shouldly": "4.3.0",
@@ -1946,7 +1946,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.110/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -2223,5 +2223,13 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

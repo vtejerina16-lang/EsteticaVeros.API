@@ -287,23 +287,6 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppointmentSettings", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BufferTime = 15,
-                            CancellationWindowHours = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DepositPercentage = 20m,
-                            EnableRecurringAppointments = true,
-                            MaxAdvanceBookingDays = 60,
-                            MaxConcurrentAppointments = 2,
-                            NoShowPenaltyPercentage = 10m,
-                            ReminderHoursBefore = 24,
-                            RequireDepositForCustomServices = true,
-                            SlotDuration = 30
-                        });
                 });
 
             modelBuilder.Entity("EsteticaVeros.API.Core.BusinessHoursAggregate.BusinessHour", b =>
@@ -349,86 +332,247 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("BusinessHours", (string)null);
+                });
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
-                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DayOfWeek = 1,
-                            IsActive = true,
-                            IsWorkingDay = true,
-                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
-                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DayOfWeek = 2,
-                            IsActive = true,
-                            IsWorkingDay = true,
-                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
-                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DayOfWeek = 3,
-                            IsActive = true,
-                            IsWorkingDay = true,
-                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
-                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DayOfWeek = 4,
-                            IsActive = true,
-                            IsWorkingDay = true,
-                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            AfternoonEndTime = new TimeSpan(0, 19, 0, 0, 0),
-                            AfternoonStartTime = new TimeSpan(0, 15, 0, 0, 0),
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DayOfWeek = 5,
-                            IsActive = true,
-                            IsWorkingDay = true,
-                            MorningEndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DayOfWeek = 6,
-                            IsActive = true,
-                            IsWorkingDay = true,
-                            MorningEndTime = new TimeSpan(0, 19, 0, 0, 0),
-                            MorningStartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            DayOfWeek = 0,
-                            IsActive = true,
-                            IsWorkingDay = false
-                        });
+            modelBuilder.Entity("EsteticaVeros.API.Core.CashRegisterAggregate.CashMovement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("CashRegisterSessionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("MovementDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MovementNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int?>("PaymentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reference")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CashRegisterSessionId");
+
+                    b.HasIndex("MovementDate");
+
+                    b.HasIndex("MovementNumber")
+                        .IsUnique();
+
+                    b.HasIndex("PaymentId");
+
+                    b.HasIndex("Type");
+
+                    b.HasIndex("CashRegisterSessionId", "MovementDate");
+
+                    b.HasIndex("CashRegisterSessionId", "Type");
+
+                    b.ToTable("CashMovements", (string)null);
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.CashRegisterAggregate.CashReconciliation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("ApprovedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ApprovedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CashRegisterSessionId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("CountedAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DenominationDetails")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<decimal>("Difference")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<int>("ReconciledByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ReconciliationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReconciliationNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("SystemAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CashRegisterSessionId");
+
+                    b.HasIndex("ReconciliationDate");
+
+                    b.HasIndex("ReconciliationNumber")
+                        .IsUnique();
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("CashRegisterSessionId", "ReconciliationDate");
+
+                    b.HasIndex("Status", "ReconciliationDate");
+
+                    b.ToTable("CashReconciliations", (string)null);
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.CashRegisterAggregate.CashRegister", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("Location")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("CashRegisters", (string)null);
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.CashRegisterAggregate.CashRegisterSession", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal?>("ActualAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("CashRegisterId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ClosedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ClosedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("Difference")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ExpectedAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("InitialAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<DateTime>("OpenedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("OpenedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SessionNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CashRegisterId");
+
+                    b.HasIndex("OpenedAt");
+
+                    b.HasIndex("SessionNumber")
+                        .IsUnique();
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("CashRegisterId", "OpenedAt");
+
+                    b.HasIndex("CashRegisterId", "Status");
+
+                    b.ToTable("CashRegisterSessions", (string)null);
                 });
 
             modelBuilder.Entity("EsteticaVeros.API.Core.ContributorAggregate.Contributor", b =>
@@ -769,6 +913,126 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                             TwoFactorEnabled = false,
                             UserName = "admin@esteticaveros.com"
                         });
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.PaymentAggregate.Payment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("AppointmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CashRegisterSessionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CreatedByUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PaymentMethodId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaymentNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Reference")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentId");
+
+                    b.HasIndex("CashRegisterSessionId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("PaymentDate");
+
+                    b.HasIndex("PaymentMethodId");
+
+                    b.HasIndex("PaymentNumber")
+                        .IsUnique();
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("CashRegisterSessionId", "PaymentDate");
+
+                    b.HasIndex("CustomerId", "PaymentDate");
+
+                    b.HasIndex("PaymentMethodId", "PaymentDate");
+
+                    b.ToTable("Payments", (string)null);
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.PaymentAggregate.PaymentMethod", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("RequiresCashRegister")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.HasIndex("Type");
+
+                    b.ToTable("PaymentMethods", (string)null);
                 });
 
             modelBuilder.Entity("EsteticaVeros.API.Core.ServiceAggregate.Service", b =>
@@ -1124,6 +1388,39 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                     b.Navigation("Appointment");
                 });
 
+            modelBuilder.Entity("EsteticaVeros.API.Core.CashRegisterAggregate.CashMovement", b =>
+                {
+                    b.HasOne("EsteticaVeros.API.Core.CashRegisterAggregate.CashRegisterSession", "Session")
+                        .WithMany()
+                        .HasForeignKey("CashRegisterSessionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Session");
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.CashRegisterAggregate.CashReconciliation", b =>
+                {
+                    b.HasOne("EsteticaVeros.API.Core.CashRegisterAggregate.CashRegisterSession", "Session")
+                        .WithMany()
+                        .HasForeignKey("CashRegisterSessionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Session");
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.CashRegisterAggregate.CashRegisterSession", b =>
+                {
+                    b.HasOne("EsteticaVeros.API.Core.CashRegisterAggregate.CashRegister", "CashRegister")
+                        .WithMany()
+                        .HasForeignKey("CashRegisterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CashRegister");
+                });
+
             modelBuilder.Entity("EsteticaVeros.API.Core.ContributorAggregate.Contributor", b =>
                 {
                     b.OwnsOne("EsteticaVeros.API.Core.ContributorAggregate.PhoneNumber", "PhoneNumber", b1 =>
@@ -1151,6 +1448,17 @@ namespace EsteticaVeros.API.Infrastructure.Data.Migrations
                         });
 
                     b.Navigation("PhoneNumber");
+                });
+
+            modelBuilder.Entity("EsteticaVeros.API.Core.PaymentAggregate.Payment", b =>
+                {
+                    b.HasOne("EsteticaVeros.API.Core.PaymentAggregate.PaymentMethod", "PaymentMethod")
+                        .WithMany()
+                        .HasForeignKey("PaymentMethodId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("PaymentMethod");
                 });
 
             modelBuilder.Entity("EsteticaVeros.API.Core.ServiceAggregate.Service", b =>

@@ -22,6 +22,9 @@ public class UpdateServiceHandler(
 
     // Update basic info
     service.UpdateBasicInfo(command.Name, command.Description, command.ShortDescription);
+    
+    // Update category
+    service.UpdateCategory(command.CategoryId);
 
     // Update pricing
     service.UpdatePricing(command.BasePrice, command.OriginalPrice, command.DiscountPercentage);

@@ -5,6 +5,8 @@ using EsteticaVeros.API.Core.ServiceAggregate;
 using EsteticaVeros.API.Core.BusinessHoursAggregate;
 using EsteticaVeros.API.Core.AppointmentSettingsAggregate;
 using EsteticaVeros.API.Core.AppointmentAggregate;
+using EsteticaVeros.API.Core.CashRegisterAggregate;
+using EsteticaVeros.API.Core.PaymentAggregate;
 using EsteticaVeros.API.Core.IdentityAggregate;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -35,6 +37,12 @@ public class AppDbContext : IdentityDbContext<
   public DbSet<AppointmentSettings> AppointmentSettings => Set<AppointmentSettings>();
   public DbSet<Appointment> Appointments => Set<Appointment>();
   public DbSet<AppointmentService> AppointmentServices => Set<AppointmentService>();
+  public DbSet<CashRegister> CashRegisters => Set<CashRegister>();
+  public DbSet<CashRegisterSession> CashRegisterSessions => Set<CashRegisterSession>();
+  public DbSet<PaymentMethod> PaymentMethods => Set<PaymentMethod>();
+  public DbSet<Payment> Payments => Set<Payment>();
+  public DbSet<CashMovement> CashMovements => Set<CashMovement>();
+  public DbSet<CashReconciliation> CashReconciliations => Set<CashReconciliation>();
 
   // Los DbSets de Identity ya están incluidos en IdentityDbContext:
   // - Users (ApplicationUser)

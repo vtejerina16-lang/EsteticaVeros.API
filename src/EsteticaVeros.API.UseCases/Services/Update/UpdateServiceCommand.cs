@@ -3,6 +3,7 @@ namespace EsteticaVeros.API.UseCases.Services.Update;
 public record UpdateServiceCommand(
   int ServiceId,
   string Name,
+  int? CategoryId,
   string? Description,
   string? ShortDescription,
   int Duration,

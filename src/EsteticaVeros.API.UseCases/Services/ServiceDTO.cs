@@ -25,7 +25,8 @@ public record ServiceDTO(
   string? Contraindications,
   DateTime CreatedAt,
   DateTime? UpdatedAt,
-  List<ServiceItemDTO>? ServiceItems = null
+  List<ServiceItemDTO>? ServiceItems = null,
+  string? CategoryName = null // 👈 Al final con valor por defecto
 );
 
 public record ServiceItemDTO(

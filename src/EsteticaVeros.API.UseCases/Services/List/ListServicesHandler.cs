@@ -122,7 +122,8 @@ public class ListServicesHandler(
       service.Contraindications,
       service.CreatedAt,
       service.UpdatedAt,
-      items
+      items,
+      null // CategoryName es opcional ya que cruzamos con CategoryId
     );
   }
 }

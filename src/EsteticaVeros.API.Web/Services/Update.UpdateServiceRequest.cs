@@ -21,7 +21,7 @@ public class UpdateServiceRequest
 
   [Required]
   public decimal BasePrice { get; set; }
-
+  public int? CategoryId { get; set; }
   public decimal? OriginalPrice { get; set; }
 
   public decimal? DiscountPercentage { get; set; }

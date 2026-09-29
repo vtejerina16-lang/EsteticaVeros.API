@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Http.HttpResults;
 namespace EsteticaVeros.API.Web.Services;
 
 public class Update(IMediator mediator)
-  : Endpoint<UpdateServiceRequest,
-             Results<Ok<UpdateServiceResponse>,
-                     NotFound,
-                     ProblemHttpResult>,
-             UpdateServiceMapper>
+    : Endpoint<UpdateServiceRequest,
+              Results<Ok<UpdateServiceResponse>,
+                      NotFound,
+                      ProblemHttpResult>,
+              UpdateServiceMapper>
 {
   public override void Configure()
   {
@@ -22,63 +22,6 @@ public class Update(IMediator mediator)
     {
       s.Summary = "Actualiza un servicio";
       s.Description = "Actualiza los datos de un servicio existente.";
-      // s.ExampleRequest = new UpdateServiceRequest
-      // {
-      //   ServiceId = 1,
-      //   Name = "Corte de cabello",
-      //   Description = "Un corte de cabello profesional para hombres y mujeres.",
-      //   ShortDescription = "Corte de cabello profesional",
-      //   Duration = TimeSpan.FromMinutes(30),
-      //   BasePrice = 20.00m,
-      //   OriginalPrice = 25.00m,
-      //   DiscountPercentage = 20,
-      //   LoyaltyPointsEarned = 10,
-      //   RequiresDeposit = false,
-      //   DepositAmount = null,
-      //   IsActive = true,
-      //   IsFeatured = true,
-      //   DisplayOrder = 1,
-      //   ImageUrl = "https://example.com/images/corte-cabello.jpg",
-      //   Notes = "Recomienda reservar con anticipación los fines de semana.",
-      //   PreparationInstructions =
-      //     "Lavar el cabello antes del servicio. Evitar usar productos pesados.",
-      //   Contraindications =
-      //     "No recomendado para personas con cuero cabelludo sensible o heridas abiertas.",
-      //   ChildServiceIds = new List<int> { 2, 3 }
-      // };
-      // s.ResponseExamples[200] = new UpdateServiceResponse(
-      //   new ServiceDetailResponse(
-      //     1,
-      //     "SRV-0001",
-      //     "Corte",
-      //     "Corte de cabello",
-      //     1,
-      //     "Corte de cabello",
-      //     "Un corte de cabello profesional para hombres y mujeres.",
-      //     "Corte de cabello profesional",
-      //     TimeSpan.FromMinutes(30),
-      //     20.00m,
-      //     25.00m,
-      //     20,
-      //     10,
-      //     false,
-      //     null,
-      //     true,
-      //     true,
-      //     1,
-      //     "https://example.com/images/corte-cabello.jpg",
-      //     "Recomienda reservar con anticipación los fines de semana.",
-      //     "Lavar el cabello antes del servicio. Evitar usar productos pesados.",
-      //     "No recomendado para personas con cuero cabelludo sensible o heridas abiertas.",
-      //     DateTime.UtcNow.AddMonths(-2),
-      //     DateTime.UtcNow,
-      //     new List<ServiceItemResponse>
-      //     {
-      //       new ServiceItemResponse(2, "SRV-0002", "Lavado de cabello", TimeSpan.FromMinutes(15)),
-      //       new ServiceItemResponse(3, "SRV-0003", "Peinado", TimeSpan.FromMinutes(20))
-      //     }
-      //   )
-      // );
 
       s.Responses[200] = "Servicio actualizado exitosamente";
       s.Responses[404] = "Servicio no encontrado";
@@ -102,25 +45,26 @@ public class Update(IMediator mediator)
     ExecuteAsync(UpdateServiceRequest request, CancellationToken ct)
   {
     var command = new UpdateServiceCommand(
-      request.ServiceId,
-      request.Name,
-      request.Description,
-      request.ShortDescription,
-      request.Duration,
-      request.BasePrice,
-      request.OriginalPrice,
-      request.DiscountPercentage,
-      request.LoyaltyPointsEarned,
-      request.RequiresDeposit,
-      request.DepositAmount,
-      request.IsActive,
-      request.IsFeatured,
-      request.DisplayOrder,
-      request.ImageUrl,
-      request.Notes,
-      request.PreparationInstructions,
-      request.Contraindications,
-      request.ChildServiceIds
+      ServiceId: request.ServiceId,
+      CategoryId: request.CategoryId,
+      Name: request.Name,
+      Description: request.Description,
+      ShortDescription: request.ShortDescription,
+      Duration: request.Duration,
+      BasePrice: request.BasePrice,
+      OriginalPrice: request.OriginalPrice,
+      DiscountPercentage: request.DiscountPercentage,
+      LoyaltyPointsEarned: request.LoyaltyPointsEarned,
+      RequiresDeposit: request.RequiresDeposit,
+      DepositAmount: request.DepositAmount,
+      IsActive: request.IsActive,
+      IsFeatured: request.IsFeatured,
+      DisplayOrder: request.DisplayOrder,
+      ImageUrl: request.ImageUrl,
+      Notes: request.Notes,
+      PreparationInstructions: request.PreparationInstructions,
+      Contraindications: request.Contraindications,
+      ChildServiceIds: request.ChildServiceIds
     );
 
     var result = await mediator.Send(command, ct);

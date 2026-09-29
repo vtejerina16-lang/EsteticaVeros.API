@@ -1,5 +1,6 @@
 ﻿using Ardalis.ListStartupServices;
 using EsteticaVeros.API.Infrastructure.Data;
+using EsteticaVeros.API.Infrastructure.Data.SeedData;
 using Scalar.AspNetCore;
 
 namespace EsteticaVeros.API.Web.Configurations;
@@ -77,7 +78,7 @@ public static class MiddlewareConfig
     {
       logger.LogInformation("Seeding database...");
       var context = services.GetRequiredService<AppDbContext>();
-      await SeedData.InitializeAsync(context);
+      await SeedData.InitializeAsync(context, logger);
       logger.LogInformation("Database seeded successfully");
     }
     catch (Exception ex)

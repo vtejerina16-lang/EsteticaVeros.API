@@ -32,22 +32,5 @@ public class AppointmentSettingsConfiguration : IEntityTypeConfiguration<Appoint
     builder.Property(s => s.MaxAdvanceBookingDays).IsRequired();
     builder.Property(s => s.CreatedAt).IsRequired();
     builder.Property(s => s.UpdatedAt).IsRequired(false);
-
-    // Seed data - configuración inicial
-    builder.HasData(new
-    {
-      Id = 1,
-      SlotDuration = 30,
-      BufferTime = 15,
-      CancellationWindowHours = 1,
-      NoShowPenaltyPercentage = 10m,
-      RequireDepositForCustomServices = true,
-      DepositPercentage = (decimal?)20m,
-      MaxConcurrentAppointments = 2,
-      EnableRecurringAppointments = true,
-      ReminderHoursBefore = 24,
-      MaxAdvanceBookingDays = 60,
-      CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
-    });
   }
 }

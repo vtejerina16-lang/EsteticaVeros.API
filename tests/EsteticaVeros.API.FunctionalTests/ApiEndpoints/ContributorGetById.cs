@@ -1,4 +1,4 @@
-﻿using EsteticaVeros.API.Infrastructure.Data;
+﻿using EsteticaVeros.API.Infrastructure.Data.SeedData;
 using EsteticaVeros.API.Web.Contributors;
 
 

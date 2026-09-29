@@ -146,7 +146,7 @@
           }
         }
       },
-      "BouncyCastle.Cryptography/2.6.1": {
+      "BouncyCastle.Cryptography/2.6.2": {
         "type": "package",
         "compile": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
@@ -249,18 +249,18 @@
           }
         }
       },
-      "MailKit/4.14.1": {
+      "MailKit/4.15.1": {
         "type": "package",
         "dependencies": {
-          "MimeKit": "4.14.0"
+          "MimeKit": "4.15.1"
         },
         "compile": {
-          "lib/net8.0/MailKit.dll": {
+          "lib/net10.0/MailKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/MailKit.dll": {
+          "lib/net10.0/MailKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         }
@@ -1665,19 +1665,19 @@
           }
         }
       },
-      "MimeKit/4.14.0": {
+      "MimeKit/4.15.1": {
         "type": "package",
         "dependencies": {
-          "BouncyCastle.Cryptography": "2.6.1",
-          "System.Security.Cryptography.Pkcs": "8.0.1"
+          "BouncyCastle.Cryptography": "2.6.2",
+          "System.Security.Cryptography.Pkcs": "10.0.0"
         },
         "compile": {
-          "lib/net8.0/MimeKit.dll": {
+          "lib/net10.0/MimeKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/MimeKit.dll": {
+          "lib/net10.0/MimeKit.dll": {
             "related": ".dll.config;.pdb;.xml"
           }
         }
@@ -2095,20 +2095,21 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Scriban/6.2.0": {
+      "Scriban/6.3.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net7.0/Scriban.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/_._": {
+          "lib/net7.0/Scriban.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "build/_._": {}
+          "build/Scriban.props": {},
+          "build/Scriban.targets": {}
         }
       },
       "Serilog/4.2.0": {
@@ -2675,15 +2676,15 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Security.Cryptography.Pkcs/9.0.4": {
+      "System.Security.Cryptography.Pkcs/10.0.0": {
         "type": "package",
         "compile": {
-          "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
@@ -2691,7 +2692,7 @@
           "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
+          "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -2815,7 +2816,7 @@
           "Azure.Identity": "1.17.0",
           "EsteticaVeros.API.Core": "1.0.0",
           "EsteticaVeros.API.UseCases": "1.0.0",
-          "MailKit": "4.14.1",
+          "MailKit": "4.15.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
           "Microsoft.AspNetCore.Identity.UI": "10.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
@@ -3052,16 +3053,16 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-    "BouncyCastle.Cryptography/2.6.1": {
-      "sha512": "vZsG2YILhthgRqO+ZVgRff4ZFKKTl0v7kqaVBLCtRvpREhfBP33pcWrdA3PRYgWuFL1RxiUFvjMUHTdBZlJcoA==",
+    "BouncyCastle.Cryptography/2.6.2": {
+      "sha512": "7oWOcvnntmMKNzDLsdxAYqApt+AjpRpP2CShjMfIa3umZ42UQMvH0tl1qAliYPNYO6vTdcGMqnRrCPmsfzTI1w==",
       "type": "package",
-      "path": "bouncycastle.cryptography/2.6.1",
+      "path": "bouncycastle.cryptography/2.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "README.md",
-        "bouncycastle.cryptography.2.6.1.nupkg.sha512",
+        "bouncycastle.cryptography.2.6.2.nupkg.sha512",
         "bouncycastle.cryptography.nuspec",
         "lib/net461/BouncyCastle.Cryptography.dll",
         "lib/net461/BouncyCastle.Cryptography.xml",
@@ -3170,10 +3171,10 @@
         "logo.png"
       ]
     },
-    "MailKit/4.14.1": {
-      "sha512": "Rawu+h3lSSjKra0AxR+IUB99VQ7jWI+MvxThekqLhf+ic7VQ7a69lmPFW+LXuRYHla4ADcn3x16Gsvju3LTq9w==",
+    "MailKit/4.15.1": {
+      "sha512": "4mLbqTbH3ctd0NlukHjVQbU3ZnNDuCtB6ttNZDLPZLWMA2Dr31rh/eCSTqOwDojUX8zfDOVaxstMgJTE9PwZNA==",
       "type": "package",
-      "path": "mailkit/4.14.1",
+      "path": "mailkit/4.15.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3182,6 +3183,10 @@
         "docs/GMailOAuth2.md",
         "docs/README.md",
         "icons/mailkit-50.png",
+        "lib/net10.0/MailKit.dll",
+        "lib/net10.0/MailKit.dll.config",
+        "lib/net10.0/MailKit.pdb",
+        "lib/net10.0/MailKit.xml",
         "lib/net462/MailKit.dll",
         "lib/net462/MailKit.dll.config",
         "lib/net462/MailKit.pdb",
@@ -3206,7 +3211,7 @@
         "lib/netstandard2.1/MailKit.dll.config",
         "lib/netstandard2.1/MailKit.pdb",
         "lib/netstandard2.1/MailKit.xml",
-        "mailkit.4.14.1.nupkg.sha512",
+        "mailkit.4.15.1.nupkg.sha512",
         "mailkit.nuspec"
       ]
     },
@@ -5384,16 +5389,20 @@
         "microsoft.sqlserver.server.nuspec"
       ]
     },
-    "MimeKit/4.14.0": {
-      "sha512": "g0LtsMC8DCTkc030C3UgVqbltOJmV5cz4AX8ASowz2ZA+lxopXSYtC1XXYmenxy606aWFLwi5Xy4cC/zyYjbjQ==",
+    "MimeKit/4.15.1": {
+      "sha512": "cxCcQhD0zhboFoG136jJuJtQjNRDJ+BxBm3f2vWn+53bff/CRo+K1mAkWjsW4Wuyy5O22F40MdMG2nRzQu1cJw==",
       "type": "package",
-      "path": "mimekit/4.14.0",
+      "path": "mimekit/4.15.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "docs/FAQ.md",
         "docs/README.md",
         "icons/mimekit-50.png",
+        "lib/net10.0/MimeKit.dll",
+        "lib/net10.0/MimeKit.dll.config",
+        "lib/net10.0/MimeKit.pdb",
+        "lib/net10.0/MimeKit.xml",
         "lib/net462/MimeKit.dll",
         "lib/net462/MimeKit.pdb",
         "lib/net462/MimeKit.xml",
@@ -5415,7 +5424,7 @@
         "lib/netstandard2.1/MimeKit.dll.config",
         "lib/netstandard2.1/MimeKit.pdb",
         "lib/netstandard2.1/MimeKit.xml",
-        "mimekit.4.14.0.nupkg.sha512",
+        "mimekit.4.15.1.nupkg.sha512",
         "mimekit.nuspec"
       ]
     },
@@ -6001,10 +6010,10 @@
         "scalar.aspnetcore.nuspec"
       ]
     },
-    "Scriban/6.2.0": {
-      "sha512": "Mpd/9Q6LQn9jPGZR11gfytuZ5ivNgjnds1RB/3HzAdivhreX5mosRtqI87Zjafdxmm7HRgjZgdDYhiGVdytLwA==",
+    "Scriban/6.3.0": {
+      "sha512": "WIOcfb9xOk6sYvYeinh3J9BLOJlZquUY3lIZmBaBNz2ci/mpB6vfjxn6dLyZSzviqzv9Pe8fbmDLjS7oCxNQNA==",
       "type": "package",
-      "path": "scriban/6.2.0",
+      "path": "scriban/6.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6015,7 +6024,7 @@
         "lib/netstandard2.0/Scriban.dll",
         "lib/netstandard2.0/Scriban.xml",
         "readme.md",
-        "scriban.6.2.0.nupkg.sha512",
+        "scriban.6.3.0.nupkg.sha512",
         "scriban.nuspec",
         "scriban.png",
         "src/Scriban/.editorconfig",
@@ -6890,20 +6899,21 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Security.Cryptography.Pkcs/9.0.4": {
-      "sha512": "cUFTcMlz/Qw9s90b2wnWSCvHdjv51Bau9FQqhsr4TlwSe1OX+7SoXUqphis5G74MLOvMOCghxPPlEqOdCrVVGA==",
+    "System.Security.Cryptography.Pkcs/10.0.0": {
+      "sha512": "UPWqLSygJlFerRi9XNIuM0a1VC8gHUIufyP24xQ0sc+XimqUAEcjpOz9DhKpyDjH+5B/wO3RpC0KpkEeDj/ddg==",
       "type": "package",
-      "path": "system.security.cryptography.pkcs/9.0.4",
+      "path": "system.security.cryptography.pkcs/10.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net10.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net10.0/System.Security.Cryptography.Pkcs.xml",
         "lib/net462/System.Security.Cryptography.Pkcs.dll",
         "lib/net462/System.Security.Cryptography.Pkcs.xml",
         "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
@@ -6914,11 +6924,13 @@
         "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.xml",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
         "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll",
         "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.xml",
-        "system.security.cryptography.pkcs.9.0.4.nupkg.sha512",
+        "system.security.cryptography.pkcs.10.0.0.nupkg.sha512",
         "system.security.cryptography.pkcs.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -7093,31 +7105,32 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.0",
       "Scalar.AspNetCore >= 2.10.3",
+      "Scriban >= 6.3.0",
       "Serilog.AspNetCore >= 9.0.0"
     ]
   },
   "packageFolders": {
-    "/home/yami/.nuget/packages/": {}
+    "/home/v_tej/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.Web/EsteticaVeros.API.Web.csproj",
+      "projectUniqueName": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.Web/EsteticaVeros.API.Web.csproj",
       "projectName": "EsteticaVeros.API.Web",
-      "projectPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.Web/EsteticaVeros.API.Web.csproj",
-      "packagesPath": "/home/yami/.nuget/packages/",
-      "outputPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.Web/obj/",
+      "projectPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.Web/EsteticaVeros.API.Web.csproj",
+      "packagesPath": "/home/v_tej/.nuget/packages/",
+      "outputPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.Web/obj/",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
-        "/mnt/d/Projects/EsteticaVeros.API/nuget.config",
-        "/home/yami/.nuget/NuGet/NuGet.Config"
+        "/home/v_tej/proyectos/EsteticaVeros.API/nuget.config",
+        "/home/v_tej/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "/mnt/d/Projects/EsteticaVeros.API/c:\\LocalNuget": {},
+        "/home/v_tej/proyectos/EsteticaVeros.API/c:\\LocalNuget": {},
         "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -7125,20 +7138,19 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.Infrastructure/EsteticaVeros.API.Infrastructure.csproj": {
-              "projectPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.Infrastructure/EsteticaVeros.API.Infrastructure.csproj"
+            "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.Infrastructure/EsteticaVeros.API.Infrastructure.csproj": {
+              "projectPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.Infrastructure/EsteticaVeros.API.Infrastructure.csproj"
             },
-            "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj": {
-              "projectPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj"
+            "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj": {
+              "projectPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj"
             },
-            "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj": {
-              "projectPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj"
+            "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj": {
+              "projectPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.UseCases/EsteticaVeros.API.UseCases.csproj"
             }
           }
         }
       },
       "warningProperties": {
-        "allWarningsAsErrors": true,
         "warnAsError": [
           "NU1605"
         ]
@@ -7201,6 +7213,11 @@
             "version": "[2.10.3, )",
             "versionCentrallyManaged": true
           },
+          "Scriban": {
+            "target": "Package",
+            "version": "[6.3.0, )",
+            "versionCentrallyManaged": true
+          },
           "Serilog.AspNetCore": {
             "target": "Package",
             "version": "[9.0.0, )",
@@ -7225,7 +7242,7 @@
           "FastEndpoints": "7.1.1",
           "FastEndpoints.ApiExplorer": "2.2.0",
           "FastEndpoints.Swagger": "7.1.1",
-          "MailKit": "4.14.1",
+          "MailKit": "4.15.1",
           "Mediator.Abstractions": "3.0.1",
           "Mediator.SourceGenerator": "3.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
@@ -7256,6 +7273,7 @@
           "OpenTelemetry.Instrumentation.Runtime": "1.13.0",
           "ReportGenerator": "5.5.0",
           "Scalar.AspNetCore": "2.10.3",
+          "Scriban": "6.3.0",
           "Serilog.AspNetCore": "9.0.0",
           "Serilog.Sinks.OpenTelemetry": "4.2.0",
           "Shouldly": "4.3.0",
@@ -7287,7 +7305,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.110/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -7704,5 +7722,13 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

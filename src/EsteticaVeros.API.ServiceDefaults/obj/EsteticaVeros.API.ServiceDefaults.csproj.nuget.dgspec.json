@@ -1,28 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj": {}
+    "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj": {}
   },
   "projects": {
-    "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj": {
+    "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj",
+        "projectUniqueName": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj",
         "projectName": "EsteticaVeros.API.ServiceDefaults",
-        "projectPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj",
-        "packagesPath": "/home/yami/.nuget/packages/",
-        "outputPath": "/mnt/d/Projects/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/",
+        "projectPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/EsteticaVeros.API.ServiceDefaults.csproj",
+        "packagesPath": "/home/v_tej/.nuget/packages/",
+        "outputPath": "/home/v_tej/proyectos/EsteticaVeros.API/src/EsteticaVeros.API.ServiceDefaults/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/mnt/d/Projects/EsteticaVeros.API/nuget.config",
-          "/home/yami/.nuget/NuGet/NuGet.Config"
+          "/home/v_tej/proyectos/EsteticaVeros.API/nuget.config",
+          "/home/v_tej/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/mnt/d/Projects/EsteticaVeros.API/c:\\LocalNuget": {},
+          "/home/v_tej/proyectos/EsteticaVeros.API/c:\\LocalNuget": {},
           "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -33,7 +33,6 @@
           }
         },
         "warningProperties": {
-          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
@@ -103,7 +102,7 @@
             "FastEndpoints": "7.1.1",
             "FastEndpoints.ApiExplorer": "2.2.0",
             "FastEndpoints.Swagger": "7.1.1",
-            "MailKit": "4.14.1",
+            "MailKit": "4.15.1",
             "Mediator.Abstractions": "3.0.1",
             "Mediator.SourceGenerator": "3.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
@@ -134,6 +133,7 @@
             "OpenTelemetry.Instrumentation.Runtime": "1.13.0",
             "ReportGenerator": "5.5.0",
             "Scalar.AspNetCore": "2.10.3",
+            "Scriban": "6.3.0",
             "Serilog.AspNetCore": "9.0.0",
             "Serilog.Sinks.OpenTelemetry": "4.2.0",
             "Shouldly": "4.3.0",
@@ -165,7 +165,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.103/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.110/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

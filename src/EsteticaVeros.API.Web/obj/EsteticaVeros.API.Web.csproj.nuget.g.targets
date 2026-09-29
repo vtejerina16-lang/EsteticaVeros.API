@@ -3,6 +3,7 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)vogen/8.0.2/buildTransitive/Vogen.targets" Condition="Exists('$(NuGetPackageRoot)vogen/8.0.2/buildTransitive/Vogen.targets')" />
     <Import Project="$(NuGetPackageRoot)sqlitepclraw.lib.e_sqlite3/2.1.11/buildTransitive/net9.0/SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('$(NuGetPackageRoot)sqlitepclraw.lib.e_sqlite3/2.1.11/buildTransitive/net9.0/SQLitePCLRaw.lib.e_sqlite3.targets')" />
+    <Import Project="$(NuGetPackageRoot)scriban/6.3.0/build/Scriban.targets" Condition="Exists('$(NuGetPackageRoot)scriban/6.3.0/build/Scriban.targets')" />
     <Import Project="$(NuGetPackageRoot)mono.texttemplating/3.0.0/buildTransitive/Mono.TextTemplating.targets" Condition="Exists('$(NuGetPackageRoot)mono.texttemplating/3.0.0/buildTransitive/Mono.TextTemplating.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.http.resilience/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Http.Resilience.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.http.resilience/10.0.0/buildTransitive/net8.0/Microsoft.Extensions.Http.Resilience.targets')" />
